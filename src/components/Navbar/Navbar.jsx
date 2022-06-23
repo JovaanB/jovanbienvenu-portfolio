@@ -5,6 +5,14 @@ import { motion } from "framer-motion";
 import { images } from "../../constants";
 import "./Navbar.scss";
 
+const navBarItems = [
+  { label: "Accueil", key: "home" },
+  { label: "À propos", key: "about" },
+  { label: "Portfolio", key: "work" },
+  { label: "Compétences", key: "skills" },
+  { label: "Contact", key: "contact" },
+];
+
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
@@ -14,10 +22,10 @@ const Navbar = () => {
         <img src={images.logo} alt="logo" />
       </div>
       <ul className="app__navbar-links">
-        {["home", "about", "work", "skills", "contact"].map((item) => (
-          <li className="app__flex p-text" key={`link-${item}`}>
+        {navBarItems.map(({ label, key }) => (
+          <li className="app__flex p-text" key={`link-${key}`}>
             <div />
-            <a href={`#${item}`}>{item}</a>
+            <a href={`#${key}`}>{label}</a>
           </li>
         ))}
       </ul>
@@ -32,10 +40,10 @@ const Navbar = () => {
           >
             <HiX onClick={() => setToggle(false)} />
             <ul>
-              {["home", "about", "work", "skills", "contact"].map((item) => (
-                <li key={item}>
-                  <a href={`#${item}`} onClick={() => setToggle(false)}>
-                    {item}
+              {navBarItems.map(({ label, key }) => (
+                <li key={key}>
+                  <a href={`#${key}`} onClick={() => setToggle(false)}>
+                    {label}
                   </a>
                 </li>
               ))}

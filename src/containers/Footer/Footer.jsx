@@ -39,7 +39,9 @@ const Footer = () => {
 
   return (
     <>
-      <h2 className="head-text">Take a coffee & chat with me</h2>
+      <h2 className="head-text">
+        Prenez un café <span>&</span> discutez avec moi
+      </h2>
 
       <div className="app__footer-cards">
         <div className="app__footer-card">
@@ -51,7 +53,7 @@ const Footer = () => {
         <div className="app__footer-card">
           <img src={images.mobile} alt="mobile" />
           <a href="tel:+33788962157" className="p-text">
-            +33788962157
+            0788962157
           </a>
         </div>
       </div>
@@ -63,7 +65,7 @@ const Footer = () => {
               className="p-text"
               type="text"
               name="name"
-              placeholder="Your Name"
+              placeholder="NOM et Prénom"
               value={name}
               onChange={handleChangeInput}
             />
@@ -73,7 +75,7 @@ const Footer = () => {
               className="p-text"
               type="text"
               name="email"
-              placeholder="Your Email"
+              placeholder="Ton adresse mail"
               value={email}
               onChange={handleChangeInput}
             />
@@ -81,19 +83,21 @@ const Footer = () => {
           <div>
             <textarea
               className="p-text"
-              placeholder="Your Message"
+              placeholder="Ton message"
               value={message}
               name="message"
               onChange={handleChangeInput}
             />
           </div>
           <button type="button" className="p-text" onClick={handleSubmit}>
-            {loading ? "Sending" : "Send Message"}
+            {loading ? "En cours..." : "Envoyer le message"}
           </button>
         </div>
       ) : (
         <div>
-          <h3 className="head-text">Thank you for getting in touch!</h3>
+          <h3 className="head-text">
+            Merci de m'avoir contacté ! Je reviens rapidmeent vers vous.
+          </h3>
         </div>
       )}
     </>

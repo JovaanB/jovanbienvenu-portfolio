@@ -38,23 +38,21 @@ const Work = () => {
   return (
     <>
       <h2 className="head-text">
-        My creative <span>Portfolio</span>
+        Mon <span>Portfolio</span>
       </h2>
 
       <div className="app__work-filter">
-        {["UI/UX", "Web app", "Mobile App", "React JS", "All"].map(
-          (item, index) => (
-            <div
-              key={index}
-              onClick={() => handleWorkFilter(item)}
-              className={`app__work-filter-item app__flex p-text ${
-                activeFilter === item ? "item-active" : ""
-              }`}
-            >
-              {item}
-            </div>
-          )
-        )}
+        {["App web", "App mobile", "ReactJS", "Tous"].map((item, index) => (
+          <div
+            key={index}
+            onClick={() => handleWorkFilter(item)}
+            className={`app__work-filter-item app__flex p-text ${
+              activeFilter === item ? "item-active" : ""
+            }`}
+          >
+            {item}
+          </div>
+        ))}
       </div>
 
       <motion.div
